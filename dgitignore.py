@@ -19,8 +19,6 @@ def main():
 			print("v0.1")
 			exit()
 		
-		verifyifexist(sys.argv[1])
-		print("Creating " + sys.argv[1])
 		
 		if os.path.exists(os.path.expanduser('~') + "/.cache/dgitignore/") == False:
 			os.system("""
@@ -29,8 +27,14 @@ def main():
 			git clone https://github.com/github/gitignore ~/.cache/dgitignore/
 			
 			""")
+		verifyifexist(sys.argv[1])
 		
-		#os.system("echo \"$(cat ~/.cache/dgitignore/" + sys.argv[1] + ".gitignore)\" > .gitignore")
+		print("Creating .gitignore")
+		
+		os.system("echo \"$(cat ~/.cache/dgitignore/" + sys.argv[1] + ".gitignore)\" > .gitignore")
+		
+		print("Created")
+		
 	else:
 		sayhelp()
 def sayhelp():
