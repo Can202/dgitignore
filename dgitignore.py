@@ -7,7 +7,7 @@ def main():
 	if len(sys.argv) > 1 :
 		print("creating " + sys.argv[1])
 		
-		if os.path.exists("~/.cache/dgitignore/") == False:
+		if os.path.exists(os.path.expanduser('~') + "/.cache/dgitignore/") == False:
 			os.system("""
 			
 			mkdir -p ~/.cache
