@@ -60,7 +60,21 @@ def saylist():
 		
 	
 def sayupdate():
-	pass
+	if os.path.exists(os.path.expanduser('~') + "/.cache/dgitignore/") == False:
+		os.system("""
+		
+		mkdir -p ~/.cache
+		git clone https://github.com/github/gitignore ~/.cache/dgitignore/
+		
+		""")
+	else:
+		os.system("""
+		
+		cd ~/.cache/dgitignore/
+		git restore :
+		git pull
+		
+		""")
 	
 def order(output):
 	lenoutput = len(output)
