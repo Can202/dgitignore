@@ -34,7 +34,14 @@ def main():
 	else:
 		sayhelp()
 def sayhelp():
-	pass
+	print("""Use:
+    dgitignore <Name>
+Other:
+    -h or --help      help
+    -v or --version   see version
+    -l or --list      list available
+    -u or --update    download news gitignores
+    """)
 def verifyifexist(gitignore):
 	if os.path.exists(os.path.expanduser('~') + "/.cache/dgitignore/" + gitignore + ".gitignore"):
 		print("gitignore detected")
